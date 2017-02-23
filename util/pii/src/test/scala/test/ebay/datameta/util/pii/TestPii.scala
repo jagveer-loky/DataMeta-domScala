@@ -16,7 +16,8 @@ class TestPii extends FunSuite with StrictLogging {
 
   case class Val(i: Int, s: String)
 
-  object PiiExportMock { // typical export of the PII abstract fields
+  object PiiExportMock { /* A mock of an export of the PII abstract field definition - constant only with the
+    field key. In a real export, there are also full definitions of the PII fields */
     val Name_First = "Name_First"
   }
   /**
