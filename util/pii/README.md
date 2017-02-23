@@ -33,6 +33,6 @@ which would give you the PII field keys and mappings to the object with impact l
 Use the exported Scala object's constants representing the PII keys as the first parameter to `org.ebay.datameta.util.pii.PiiValue`
 and the second is the related value whatever type it is.
 
-See [the tests](FIXME) for a quick example.
+See [the unit tests](https://github.com/eBayDataMeta/DataMeta-domScala/blob/master/util/pii/src/test/scala/test/ebay/datameta/util/pii/TestPii.scala) for a quick example.
 
 
