@@ -76,17 +76,25 @@ object JacksonUtil {
   def writeBitSetFld(fieldName: String, out: JsonGenerator, source: BitSet): Unit = {
     writeLongArrayFld(fieldName, out, source.getTrimmedImage)
   }
-  
-  def writeCollectionFld[T <: DataMetaEntity](fieldName: String, out: JsonGenerator, source: java.util.Collection[T], js: Jsonable[T]): Unit = {
+
+  def writeCollection[T <: DataMetaEntity](out: JsonGenerator, source: java.util.Collection[T], js: Jsonable[T]): Unit = {
     if(source == null) out.writeNull()
     else {
-      out.writeArrayFieldStart(fieldName)
+      out.writeStartArray(source.size())
       for(e <- source) {
         out.writeStartObject()
         js.write(out, e)
         out.writeEndObject()
       }
       out.writeEndArray()
+    }
+  }
+
+  def writeCollectionFld[T <: DataMetaEntity](fieldName: String, out: JsonGenerator, source: java.util.Collection[T], js: Jsonable[T]): Unit = {
+    if(source == null) out.writeNull()
+    else {
+      out.writeFieldName(fieldName)
+      writeCollection(out, source, js)
     }
   }
   
