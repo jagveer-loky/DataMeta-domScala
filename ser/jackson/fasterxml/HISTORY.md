@@ -3,7 +3,7 @@
 ## `2.0.0` released `2017-04-18 Tue` by [`mub`](https://github.com/mub)
 * 1 major change:
     * Added the `ignoreUnknown` parameter to the [`Jsonable[T]` trait](https://github.com/eBayDataMeta/DataMeta-domScala/blob/master/ser/jackson/fasterxml/src/main/scala/org/ebay/datameta/ser/jackson/fasterxml/Jsonable.scala) and changed the trait method name, otherwise the code won't compile: the Scala compiler apparently 
-    had trouble with overloaded methods with default parameters. 
+    has trouble with overloaded methods with default parameters. 
 
 ## `1.0.1` released `2017-04-12 Wed` by [`mub`](https://github.com/mub)
 * 1 update:
